@@ -3,13 +3,31 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import About from "./routes/About";
+import Academics from "./routes/Academics";
+import Interests from "./routes/Interests";
+import Journey from "./routes/Journey";
+import Feedback from "./routes/Feedback";
+import ExtraCurriculars from "./routes/ExtraCurriculars";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Header />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/academics" element={<Academics />} />
+        <Route path="/extracurriculars" element={<ExtraCurriculars />} />
+        <Route path="/feedback" element={<Feedback />} />
+        <Route path="/journey" element={<Journey />} />
+        <Route path="/interests" element={<Interests />} />
+      </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

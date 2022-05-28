@@ -1,19 +1,77 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+const css = `
+    header {
+      margin: 50px;
+    }
+
+    h1 {
+      font-size: 5em;
+      color: white;
+    }
+
+    q {
+      font-size: 1.5em;
+      margin: 20px;
+
+    }
+
+    div.skew {
+      animation-name: example2;
+      animation-duration: 5s;
+    }
+
+    @keyframes example2 {
+      from {
+        transform: skew(-100deg);
+      }
+
+      to {
+        transform: skew(0deg);
+      }
+    }
+
+    div.gallery {
+      margin: 50px;
+      padding: 50px;
+      border: 1px solid white;
+      float: left;
+      display: flex;
+      width: 200px;
+      justify-items: center;
+    }
+
+    div.gallery:hover {
+      border: 0px;
+      transform: translate(0px, -20px);
+      transition-timing-function: linear;
+      transform: scale(1.5, 1.5);
+      z-index: 2;
+    }
+
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+
+`;
+
 function App() {
   return (
-    <>
-      <Header />
-      <div class="skew">
+    <div>
+      <style>{css}</style>
+
+      <div className="skew">
         <q>
           Enthusiastic CS undergrad hoping to pay it back forward to the society
           through product innovation, design and teaching.
         </q>
       </div>
 
-      <div class="gallery">
+      <div className="gallery">
         <a target="_blank" href="assets/img_waves.jpg">
           <img
             src="assets/img_waves.jpg"
@@ -24,7 +82,7 @@ function App() {
         </a>
       </div>
 
-      <div class="gallery">
+      <div className="gallery">
         <a target="_blank" href="assets/img_sunset.jpg">
           <img
             src="assets/img_sunset.jpg"
@@ -35,7 +93,7 @@ function App() {
         </a>
       </div>
 
-      <div class="gallery">
+      <div className="gallery">
         <a target="_blank" href="assets/img_mountains.jpg">
           <img
             src="assets/img_mountains.jpg"
@@ -45,8 +103,7 @@ function App() {
           />
         </a>
       </div>
-      <Footer />
-    </>
+    </div>
   );
 }
 
